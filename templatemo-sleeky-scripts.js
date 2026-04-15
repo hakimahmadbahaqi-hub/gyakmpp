@@ -20,8 +20,8 @@ class VerticalCubeSlider {
         
         this.images = [
             {
-                url: 'unsplash-image-01.jpg',
-                thumb: 'unsplash-thumb-01.jpg',
+                url: 'images/unsplash-image-01.jpg',
+                thumb: 'images/unsplash-thumb-01.jpg',
                 title: 'Mountain Peak',
                 description: 'Majestic snow-capped mountains reaching towards the endless sky, showcasing nature\'s raw beauty and power.'
             },
