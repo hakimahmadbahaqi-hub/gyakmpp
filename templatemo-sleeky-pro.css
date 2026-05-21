@@ -1579,29 +1579,6 @@ html {
     }
 }
 
-/* Gaya dasar navigasi agar sejajar horizontal */
-.nav-links {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  gap: 20px; /* Jarak antar menu */
-}
-
-.btn-login {
-  background-color: #d63384; /* Warna pink/merah sesuai tema Beranda Anda */
-  color: white;
-  padding: 8px 20px;
-  border-radius: 20px; /* Membuat sudut melingkar (pill-shaped) */
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.btn-login:hover {
-  background-color: #b02a6b;
-  transform: scale(1.05);
-}
-
 #message{
 	background: #ff4e4e;
 	color: white;
