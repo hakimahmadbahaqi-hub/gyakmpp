@@ -18,6 +18,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
         if (data.status === "success") {
             // Simpan username ke localStorage agar terbaca landing page
             localStorage.setItem("username", data.username);
+            localStorage.setItem("token", data.token || "aktif");
             alert("Login berhasil!");
             window.location.href = "../index.html";
         } else {
