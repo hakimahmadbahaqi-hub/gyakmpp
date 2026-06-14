@@ -387,21 +387,37 @@ https://templatemo.com/tm-598-sleeky-pro
         </div>
     </footer>
 
-   <script src="templatemo-sleeky-scripts.js"></script>
+<script src="templatemo-sleeky-scripts.js"></script>
 <script src="login/js/welcome.js"></script>
 
 <script>
-// 1. Fungsi bawaan untuk mengarahkan ke halaman login
+// 1. Fungsi untuk mengatur tombol Login / Logout
 function goLogin() {
-    window.location.href = "login/index.html";
+    // Jika user mengeklik tombol saat statusnya sudah login, lakukan logout
+    if (localStorage.getItem('username')) {
+        localStorage.clear(); // Menghapus memori login heri
+        alert("Kamu telah logout.");
+        window.location.reload(); // Refresh halaman agar teks kembali jadi "Belum login"
+    } else {
+        // Jika belum login, arahkan ke folder form login
+        window.location.href = "login/index.html";
+    }
 }
 
-// 2. Mengecek apakah ada data login dari server Pak Heri
+// 2. Mengecek status login saat halaman pertama kali dimuat
 const username = localStorage.getItem('username');
 
 if (username) {
-    // Ganti tulisan "Belum login" menjadi nama user yang masuk
+    // Mengubah tulisan "Belum login" menjadi "Selamat Datang, heri"
     document.body.innerHTML = document.body.innerHTML.replace('Belum login', 'Selamat Datang, ' + username);
+    
+    // Otomatis mengubah teks tombol kotak di kanan dari "Login" menjadi "Logout"
+    const buttons = document.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+        if (buttons[i].innerText.trim() === 'Login') {
+            buttons[i].innerText = 'Logout';
+        }
+    }
 }
 </script>
 </body>
