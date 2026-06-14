@@ -387,12 +387,21 @@ https://templatemo.com/tm-598-sleeky-pro
         </div>
     </footer>
 
-    <script src="templatemo-sleeky-scripts.js"></script>
-        <script src="login/js/welcome.js"></script>
-    <script>
+   <script src="templatemo-sleeky-scripts.js"></script>
+<script src="login/js/welcome.js"></script>
+
+<script>
+// 1. Fungsi bawaan untuk mengarahkan ke halaman login
 function goLogin() {
-    // Fungsi ini yang akan mengarahkan browser masuk ke folder login saat tombol diklik
     window.location.href = "login/index.html";
+}
+
+// 2. Mengecek apakah ada data login dari server Pak Heri
+const username = localStorage.getItem('username');
+
+if (username) {
+    // Ganti tulisan "Belum login" menjadi nama user yang masuk
+    document.body.innerHTML = document.body.innerHTML.replace('Belum login', 'Selamat Datang, ' + username);
 }
 </script>
 </body>
