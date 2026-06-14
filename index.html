@@ -36,7 +36,7 @@ https://templatemo.com/tm-598-sleeky-pro
                 <li><a href="#services" class="nav-link">Layanan</a></li>
                 <li><a href="#about" class="nav-link">Tentang</a></li>
                 <li><a href="#contact" class="nav-link">Kontak</a></li>
-                <p id="userinfo">Belum login</p>
+                <span id="userinfo">Belum login</span>
             </ul>
         <div id="authArea">
             <button onclick="goLogin()" class="nav-cta">Login</button>
@@ -393,32 +393,49 @@ https://templatemo.com/tm-598-sleeky-pro
 <script>
 // 1. Fungsi untuk mengatur tombol Login / Logout
 function goLogin() {
-    // Jika user mengeklik tombol saat statusnya sudah login, lakukan logout
     if (localStorage.getItem('username')) {
-        localStorage.clear(); // Menghapus memori login heri
+        localStorage.clear(); 
         alert("Kamu telah logout.");
-        window.location.reload(); // Refresh halaman agar teks kembali jadi "Belum login"
+        window.location.reload(); 
     } else {
-        // Jika belum login, arahkan ke folder form login
         window.location.href = "login/index.html";
     }
 }
 
 // 2. Mengecek status login saat halaman pertama kali dimuat
 const username = localStorage.getItem('username');
+const userStatusEl = document.getElementById('userinfo'); // Menyesuaikan ID asli kamu: userinfo
+const loginBtn = document.querySelector('.nav-cta'); // Langsung menembak class tombolmu (.nav-cta)
 
 if (username) {
-    // Mengubah tulisan "Belum login" menjadi "Selamat Datang, heri"
-    document.body.innerHTML = document.body.innerHTML.replace('Belum login', 'Selamat Datang, ' + username);
+    if (userStatusEl) {
+        userStatusEl.innerText = 'Selamat Datang, ' + username;
+        // Memberi sedikit styling agar teks manis dan sejajar di navbar
+        userStatusEl.style.display = "inline-block";
+        userStatusEl.style.marginRight = "20px";
+        userStatusEl.style.color = "#555";
+        userStatusEl.style.fontWeight = "500";
+    }
     
-    // Otomatis mengubah teks tombol kotak di kanan dari "Login" menjadi "Logout"
-    const buttons = document.getElementsByTagName('button');
-    for (let i = 0; i < buttons.length; i++) {
-        if (buttons[i].innerText.trim() === 'Login') {
-            buttons[i].innerText = 'Logout';
-        }
+    if (loginBtn) {
+        loginBtn.innerText = 'Logout';
+        loginBtn.style.backgroundColor = '#e74c3c'; // Mengubah tombol menjadi merah elegan saat logout
+        loginBtn.style.color = '#fff';
+    }
+} else {
+    if (userStatusEl) {
+        userStatusEl.innerText = 'Belum login';
+        userStatusEl.style.display = "inline-block";
+        userStatusEl.style.marginRight = "20px";
+    }
+    if (loginBtn) {
+        loginBtn.innerText = 'Login';
+        // Mengembalikan ke gaya asli bawaan templatemo jika belum login
+        loginBtn.style.backgroundColor = ''; 
+        loginBtn.style.color = '';
     }
 }
+</script>
 </script>
 </body>
 </html>
