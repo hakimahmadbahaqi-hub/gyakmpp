@@ -35,7 +35,8 @@ const passwordToggle = document.getElementById('passwordToggle');
 const passwordInput = document.getElementById('password');
 
 if (passwordToggle && passwordInput) {
-    passwordToggle.addEventListener('click', function () {
+    passwordToggle.addEventListener('click', function (e) {
+        e.preventDefault();
         const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
         passwordInput.setAttribute('type', type);
         this.classList.toggle('is-active'); 
