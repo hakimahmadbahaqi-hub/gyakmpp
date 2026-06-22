@@ -9,6 +9,37 @@
 <!-- TemplateMo 598 Sleeky Pro
 https://templatemo.com/tm-598-sleeky-pro
 -->
+    <style>
+        /* Mengatur posisi teks status agar sejajar manis dengan menu lain */
+        #userinfo {
+            margin-right: 20px !important;
+            color: #555 !important;
+            font-weight: 500 !important;
+            vertical-align: middle !important;
+        }
+        
+        /* Mengubah tombol Logout kotak jadul menjadi kapsul modern */
+        .tombol-logout {
+            background-color: #e74c3c !important; /* Warna merah modern */
+            background-image: none !important;
+            color: #ffffff !important;
+            border: none !important; /* Menghapus garis border hitam kaku */
+            
+            /* Meniru lekukan tombol asli template agar tetap serasi */
+            padding: 10px 25px !important; 
+            border-radius: 50px !important; /* Membuat sudut bulat lonjong/kapsul */
+            font-weight: 500 !important;
+            cursor: pointer !important;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3) !important; /* Efek bayangan estetik */
+            transition: all 0.3s ease !important;
+        }
+
+        /* Efek saat tombol disorot mouse */
+        .tombol-logout:hover {
+            background-color: #c0392b !important; /* Merah agak gelap */
+            box-shadow: 0 4px 20px rgba(231, 76, 60, 0.5) !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -404,40 +435,30 @@ function goLogin() {
     }
 }
 
-// 2. Mengecek status login saat halaman pertama kali dimuat
+// 2. Logika untuk mengatur teks dan mengaktifkan CSS tombol Logout modern
 const username = localStorage.getItem('username');
-const userStatusEl = document.getElementById('userinfo'); // Menyesuaikan ID asli kamu: userinfo
-const loginBtn = document.querySelector('.nav-cta'); // Langsung menembak class tombolmu (.nav-cta)
+const userStatusEl = document.getElementById('userinfo'); 
+const loginBtn = document.querySelector('.nav-cta'); // Menembak tombol login asli kamu
 
 if (username) {
+    // Jika sukses login: ganti teks status dan pasang class tombol merah modern
     if (userStatusEl) {
         userStatusEl.innerText = 'Selamat Datang, ' + username;
-        // Memberi sedikit styling agar teks manis dan sejajar di navbar
-        userStatusEl.style.display = "inline-block";
-        userStatusEl.style.marginRight = "20px";
-        userStatusEl.style.color = "#555";
-        userStatusEl.style.fontWeight = "500";
     }
-    
     if (loginBtn) {
         loginBtn.innerText = 'Logout';
-        loginBtn.style.backgroundColor = '#e74c3c'; // Mengubah tombol menjadi merah elegan saat logout
-        loginBtn.style.color = '#fff';
+        loginBtn.classList.add('tombol-logout'); // Memicu gaya kapsul merah di <style> atas
     }
 } else {
+    // Jika belum login/setelah logout: kembalikan ke setelan awal template
     if (userStatusEl) {
         userStatusEl.innerText = 'Belum login';
-        userStatusEl.style.display = "inline-block";
-        userStatusEl.style.marginRight = "20px";
     }
     if (loginBtn) {
         loginBtn.innerText = 'Login';
-        // Mengembalikan ke gaya asli bawaan templatemo jika belum login
-        loginBtn.style.backgroundColor = ''; 
-        loginBtn.style.color = '';
+        loginBtn.classList.remove('tombol-logout'); // Hapus warna merah
     }
 }
-</script>
 </script>
 </body>
 </html>
