@@ -10,33 +10,49 @@
 https://templatemo.com/tm-598-sleeky-pro
 -->
     <style>
-        /* Mengatur posisi teks status agar sejajar manis dengan menu lain */
+        /* Merapikan posisi teks status agar sejajar vertikal/tengah di navbar */
         #userinfo {
-            margin-right: 20px !important;
+            display: inline-block !important;
+            padding: 0 15px !important;
             color: #555 !important;
             font-weight: 500 !important;
+            font-size: 14px !important;
             vertical-align: middle !important;
+            line-height: 40px !important; /* Memaksa tinggi teks sejajar dengan menu */
         }
         
-        /* Mengubah tombol Logout kotak jadul menjadi kapsul modern */
-        .tombol-logout {
-            background-color: #e74c3c !important; /* Warna merah modern */
-            background-image: none !important;
-            color: #ffffff !important;
-            border: none !important; /* Menghapus garis border hitam kaku */
-            
-            /* Meniru lekukan tombol asli template agar tetap serasi */
+        /* Memaksa tombol LOGIN bawaan berbentuk kapsul rapi saat BELUM login */
+        .tombol-login-asli {
+            background-color: #fff !important; 
+            color: #555 !important;
+            border: 1px solid #ddd !important;
             padding: 10px 25px !important; 
-            border-radius: 50px !important; /* Membuat sudut bulat lonjong/kapsul */
+            border-radius: 50px !important; /* Membuat sudut bulat kapsul */
             font-weight: 500 !important;
             cursor: pointer !important;
-            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3) !important; /* Efek bayangan estetik */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
             transition: all 0.3s ease !important;
         }
+        .tombol-login-asli:hover {
+            background-color: #f8f9fa !important;
+            border-color: #ccc !important;
+        }
 
-        /* Efek saat tombol disorot mouse */
+        /* Gaya tombol LOGOUT kapsul merah saat SUDAH login */
+        .tombol-logout {
+            background-color: #e74c3c !important; 
+            background-image: none !important;
+            color: #ffffff !important;
+            border: none !important; 
+            padding: 10px 25px !important; 
+            border-radius: 50px !important; /* Menjaga sudut bulat kapsul */
+            font-weight: 500 !important;
+            cursor: pointer !important;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3) !important; 
+            transition: all 0.3s ease !important;
+        }
         .tombol-logout:hover {
-            background-color: #c0392b !important; /* Merah agak gelap */
+            background-color: #c0392b !important; 
             box-shadow: 0 4px 20px rgba(231, 76, 60, 0.5) !important;
         }
     </style>
@@ -424,7 +440,7 @@ https://templatemo.com/tm-598-sleeky-pro
 <script src="login/welcome.js"></script>
 
 <script>
-// 1. Fungsi untuk mengatur tombol Login / Logout
+// Fungsi tombol Login / Logout
 function goLogin() {
     if (localStorage.getItem('username')) {
         localStorage.clear(); 
@@ -435,28 +451,28 @@ function goLogin() {
     }
 }
 
-// 2. Logika untuk mengatur teks dan mengaktifkan CSS tombol Logout modern
+// Logika pembagian tampilan UI berdasarkan status login
 const username = localStorage.getItem('username');
 const userStatusEl = document.getElementById('userinfo'); 
-const loginBtn = document.querySelector('.nav-cta'); // Menembak tombol login asli kamu
+const loginBtn = document.querySelector('.nav-cta') || document.querySelector('button[onclick="goLogin()"]'); 
 
 if (username) {
-    // Jika sukses login: ganti teks status dan pasang class tombol merah modern
     if (userStatusEl) {
         userStatusEl.innerText = 'Selamat Datang, ' + username;
     }
     if (loginBtn) {
         loginBtn.innerText = 'Logout';
-        loginBtn.classList.add('tombol-logout'); // Memicu gaya kapsul merah di <style> atas
+        loginBtn.classList.remove('tombol-login-asli'); // Buang gaya putih
+        loginBtn.classList.add('tombol-logout');       // Pasang gaya kapsul merah
     }
 } else {
-    // Jika belum login/setelah logout: kembalikan ke setelan awal template
     if (userStatusEl) {
         userStatusEl.innerText = 'Belum login';
     }
     if (loginBtn) {
         loginBtn.innerText = 'Login';
-        loginBtn.classList.remove('tombol-logout'); // Hapus warna merah
+        loginBtn.classList.remove('tombol-logout');     // Buang gaya merah jika ada
+        loginBtn.classList.add('tombol-login-asli');   // Paksa pasang gaya kapsul rapi
     }
 }
 </script>
