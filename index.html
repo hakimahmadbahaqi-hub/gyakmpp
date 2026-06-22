@@ -20,9 +20,9 @@ https://templatemo.com/tm-598-sleeky-pro
             vertical-align: middle !important;
             line-height: 48px !important; 
             
-            /* PENGATUR JARAK BARU */
-            margin-left: 40px !important;  /* Otomatis mendorong dirinya ke kanan menjauhi menu */
-            margin-right: 0px !important; /* Mengatur jarak mepet yang pas dengan tombol (bisa kamu ganti 5px, 10px, dll) */
+            /* PENGATUR JARAK AMAN */
+            margin-left: 50px !important;  /* Mendorong teks ke kanan agar menjauh dari menu Kontak */
+            margin-right: -10px !important; /* Memaksa teks agar posisinya mepet mendekati tombol Login */
         }       
         /* 2. MEMBERI WARNA PADA TOMBOL LOGIN (KAPSUL BIRU/HIJAU ESTETIK) */
         .tombol-login-asli {
@@ -87,8 +87,8 @@ https://templatemo.com/tm-598-sleeky-pro
                 <li><a href="#services" class="nav-link">Layanan</a></li>
                 <li><a href="#about" class="nav-link">Tentang</a></li>
                 <li><a href="#contact" class="nav-link">Kontak</a></li>
+                <li><span id="userinfo">Belum login</span></li>
             </ul>
-            <span id="userinfo">Belum login</span>
         <div id="authArea">
             <button onclick="goLogin()" class="nav-cta">Login</button>
         </div>
