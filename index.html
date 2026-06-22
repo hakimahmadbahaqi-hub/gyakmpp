@@ -12,17 +12,19 @@ https://templatemo.com/tm-598-sleeky-pro
     <style>
                 /* 1. MENGATUR TEKS INDIKATOR AGAR LEBIH KE BAWAH */
         /* Merapikan posisi teks status agar sejajar vertikal dan bergeser ke kanan */
+        .user-action-group {
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important; /* Mengunci jarak mepet antara teks dan tombol (bisa kamu ganti 5px, 10px, dst) */
+        }
+
+/* Mengatur gaya teks indikator login */
         #userinfo {
             display: inline-block !important;
             color: #555 !important;
             font-weight: 500 !important;
             font-size: 14px !important;
-            vertical-align: middle !important;
-            line-height: 48px !important; 
-            
-            /* PENGATUR JARAK AMAN */
-            margin-left: 50px !important;  /* Mendorong teks ke kanan agar menjauh dari menu Kontak */
-            margin-right: -10px !important; /* Memaksa teks agar posisinya mepet mendekati tombol Login */
+            white-space: nowrap !important; /* Mencegah teks patah jadi 2 baris */
         }       
         /* 2. MEMBERI WARNA PADA TOMBOL LOGIN (KAPSUL BIRU/HIJAU ESTETIK) */
         .tombol-login-asli {
@@ -87,8 +89,10 @@ https://templatemo.com/tm-598-sleeky-pro
                 <li><a href="#services" class="nav-link">Layanan</a></li>
                 <li><a href="#about" class="nav-link">Tentang</a></li>
                 <li><a href="#contact" class="nav-link">Kontak</a></li>
-                <li><span id="userinfo">Belum login</span></li>
             </ul>
+            <div class="user-action-group">
+                <span id="userinfo">Belum login</span>
+            </div>
         <div id="authArea">
             <button onclick="goLogin()" class="nav-cta">Login</button>
         </div>
