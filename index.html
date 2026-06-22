@@ -10,7 +10,7 @@
 https://templatemo.com/tm-598-sleeky-pro
 -->
     <style>
-        /* Merapikan posisi teks status agar sejajar vertikal/tengah di navbar */
+                /* 1. MENGATUR TEKS INDIKATOR AGAR LEBIH KE BAWAH */
         #userinfo {
             display: inline-block !important;
             padding: 0 15px !important;
@@ -18,34 +18,36 @@ https://templatemo.com/tm-598-sleeky-pro
             font-weight: 500 !important;
             font-size: 14px !important;
             vertical-align: middle !important;
-            line-height: 40px !important; /* Memaksa tinggi teks sejajar dengan menu */
+            /* Menaikkan line-height dari 40px ke 48px agar teks terdorong lebih ke bawah */
+            line-height: 48px !important; 
         }
         
-        /* Memaksa tombol LOGIN bawaan berbentuk kapsul rapi saat BELUM login */
+        /* 2. MEMBERI WARNA PADA TOMBOL LOGIN (KAPSUL BIRU/HIJAU ESTETIK) */
         .tombol-login-asli {
-            background-color: #fff !important; 
-            color: #555 !important;
-            border: 1px solid #ddd !important;
+            /* Kita beri warna latar belakang (misal biru/toska agar kontras dengan Logout merah) */
+            background-color: #2ecc71 !important; /* Hijau segar estetik, atau ganti #3498db jika ingin Biru */
+            color: #ffffff !important; /* Warna teks diubah jadi putih agar terbaca */
+            border: none !important;
             padding: 10px 25px !important; 
-            border-radius: 50px !important; /* Membuat sudut bulat kapsul */
+            border-radius: 50px !important;
             font-weight: 500 !important;
             cursor: pointer !important;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3) !important; /* Efek bayangan */
             transition: all 0.3s ease !important;
         }
         .tombol-login-asli:hover {
-            background-color: #f8f9fa !important;
-            border-color: #ccc !important;
+            background-color: #27ae60 !important; /* Warna agak gelap saat disorot */
+            box-shadow: 0 4px 20px rgba(46, 204, 113, 0.5) !important;
         }
-
-        /* Gaya tombol LOGOUT kapsul merah saat SUDAH login */
+        
+        /* 3. TOMBOL LOGOUT MERAH (TETAP SAMA SEPERTI KEMARIN) */
         .tombol-logout {
             background-color: #e74c3c !important; 
             background-image: none !important;
             color: #ffffff !important;
             border: none !important; 
             padding: 10px 25px !important; 
-            border-radius: 50px !important; /* Menjaga sudut bulat kapsul */
+            border-radius: 50px !important; 
             font-weight: 500 !important;
             cursor: pointer !important;
             box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3) !important; 
