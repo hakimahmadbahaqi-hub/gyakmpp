@@ -12,19 +12,21 @@ https://templatemo.com/tm-598-sleeky-pro
     <style>
                 /* 1. MENGATUR TEKS INDIKATOR AGAR LEBIH KE BAWAH */
         /* Merapikan posisi teks status agar sejajar vertikal dan bergeser ke kanan */
-        .user-action-group {
+        /* Mengatur wadah pembungkus tombol agar menjadi flexbox rapi */
+        #authArea {
             display: flex !important;
             align-items: center !important;
-            gap: 0px !important; /* Mengunci jarak mepet antara teks dan tombol (bisa kamu ganti 5px, 10px, dst) */
+            gap: 12px !important; /* <--- KUNCI UTAMA: Mengatur jarak mepet antara teks dan tombol sesukamu (misal 8px, 12px, atau 15px) */
         }
-
-/* Mengatur gaya teks indikator login */
+        
+        /* Mengatur gaya teks indikator login */
         #userinfo {
             display: inline-block !important;
             color: #555 !important;
             font-weight: 500 !important;
-            font-size: 16px !important;
-            white-space: nowrap !important; /* Mencegah teks patah jadi 2 baris */
+            font-size: 14px !important;
+            white-space: nowrap !important; /* Mencegah teks patah menjadi dua baris */
+            margin: 0 !important; /* Menghapus margin bawaan terdahulu agar tidak bentrok */
         }       
         /* 2. MEMBERI WARNA PADA TOMBOL LOGIN (KAPSUL BIRU/HIJAU ESTETIK) */
         .tombol-login-asli {
@@ -90,12 +92,10 @@ https://templatemo.com/tm-598-sleeky-pro
                 <li><a href="#about" class="nav-link">Tentang</a></li>
                 <li><a href="#contact" class="nav-link">Kontak</a></li>
             </ul>
-            <div class="user-action-group">
+            <div id="authArea">
                 <span id="userinfo">Belum login</span>
+                <button onclick="goLogin()" class="nav-cta">Login</button>
             </div>
-        <div id="authArea">
-            <button onclick="goLogin()" class="nav-cta">Login</button>
-        </div>
             <button class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
