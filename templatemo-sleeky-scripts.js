@@ -22,32 +22,32 @@ class VerticalCubeSlider {
             {
                 url: 'images/unsplash-image-01.jpg',
                 thumb: 'images/unsplash-thumb-01.jpg',
-                title: 'Mountain Peak',
-                description: 'Majestic snow-capped mountains reaching towards the endless sky, showcasing nature\'s raw beauty and power.'
+                title: 'Taman Delayota',
+                description: 'Taman Delayota yang nyaman dan asri disertai tanaman yang rimbun membuat suasana belajar yang nyaman'
             },
             {
                 url: 'images/unsplash-image-02.jpg',
                 thumb: 'images/unsplash-thumb-02.jpg',
-                title: 'Sky Paradise',
-                description: 'Vibrant sunset clouds painting the heavens in brilliant oranges and purples, creating a dreamlike atmosphere.'
+                title: 'Gazebo Tengah',
+                description: 'Gazebo tengah adalah tempat yang digunakan oleh sejumlah warga sekolah untuk digunakan berbagai hal kegiatan.'
             },
             {
                 url: 'images/unsplash-image-03.jpg',
                 thumb: 'images/unsplash-thumb-03.jpg',
-                title: 'Misty Forest',
-                description: 'Ethereal morning fog weaving through ancient trees, creating a mystical and serene woodland sanctuary.'
+                title: 'Classmeet - Esport',
+                description: 'Kegiatan setelah ujian untuk menghilangkan rasa depresi dan meningkatkan solidartias serta keterampilan siswa-siswi Delayota'
             },
             {
                 url: 'images/unsplash-image-04.jpg',
                 thumb: 'images/unsplash-thumb-04.jpg',
-                title: 'Ocean Waves',
-                description: 'Powerful ocean waves crashing against rugged coastlines, demonstrating the endless rhythm of the sea.'
+                title: 'Grand Concert Amorea',
+                description: 'Event eksternal yang membawakan pertunjukan orchestra dari siswa-siswi Delayota dan juga spesial guest star yaitu Ardhito Pramono'
             },
             {
                 url: 'images/unsplash-image-05.jpg',
                 thumb: 'images/unsplash-thumb-05.jpg',
-                title: 'Night Sky',
-                description: 'Brilliant stars scattered across the cosmic canvas, revealing the infinite mystery of our universe.'
+                title: 'Kelas XE8',
+                description: 'Siswa-siswi Delayota dari kelas XE8 angkatan 28 yang menggunakan busana gagrak ngayogyakarta.'
             }
         ];
         
