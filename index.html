@@ -10,6 +10,22 @@
 https://templatemo.com/tm-598-sleeky-pro
 -->
     <style>
+        /* Menormalkan kembali kolom textarea agar tidak bocor warna merah */
+        .form-group textarea {
+            background: #ffffff !important;        /* Memaksa background menjadi putih solid, bukan transparan */
+            backdrop-filter: none !important;      /* Mematikan efek blur yang bikin warna merah di belakangnya bocor masuk */
+            
+            /* MEMPERBAIKI TEKS MULAI DARI KIRI ATAS */
+            text-align: left !important;           /* Mengunci teks agar mulai dari kiri */
+            line-height: 1.5 !important;           /* Menjaga kenyamanan jarak antar baris teks */
+            padding: 18px 20px !important;         /* Mengikuti padding asli template kamu supaya tetap estetik */
+        }
+        
+        /* Memastikan saat kolom diklik (focus), background-nya tetap putih bersih */
+        .form-group textarea:focus {
+            background: #ffffff !important;
+            backdrop-filter: none !important;
+        }
                 /* 1. MENGATUR TEKS INDIKATOR AGAR LEBIH KE BAWAH */
         /* Merapikan posisi teks status agar sejajar vertikal dan bergeser ke kanan */
         /* Mengatur wadah pembungkus tombol agar menjadi flexbox rapi */
